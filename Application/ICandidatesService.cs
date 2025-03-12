@@ -9,7 +9,8 @@ namespace Application
 {
     public interface ICandidatesService
     {
-        public Task<Candidate?> AddCandidate(Candidate CandidateData);
-        public Task<Candidate?> FailCandidate(string CandidateId);
+        public Task<Candidate?> AddCandidate(Candidate candidateData);
+        public Task<Candidate?> FindCandidate(string candidateId);
+        public Task<Candidate?> FailCandidate(string candidateId);
     }
 }

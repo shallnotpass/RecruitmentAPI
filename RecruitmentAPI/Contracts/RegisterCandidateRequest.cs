@@ -6,8 +6,6 @@
             string FirstName,
             string Patronymic,
             string Email,
-            DateTime WorkingStartDate,
-            bool ProbationIsCompleted,
             bool TestIsNeeded 
         );
 }

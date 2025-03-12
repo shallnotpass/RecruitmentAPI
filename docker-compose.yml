@@ -2,7 +2,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: ./BalanceAPI/Dockerfile
+      dockerfile: ./RecruitmentAPI/Dockerfile
     ports:
       - 500:8080
     environment:
@@ -16,7 +16,7 @@ services:
       - POSTGRES_HOST_AUTH_METHOD=md5
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=BalanceDb
+      - POSTGRES_DB=RecruitmentDb
     restart: always
     ports:
         - "5432:5432"

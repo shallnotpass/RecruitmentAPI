@@ -21,13 +21,12 @@ namespace DataAccess
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             CandidateMap(modelBuilder.Entity<Candidate>());
-            // Настройка свойств сущности Candidate
-            modelBuilder.Entity<Candidate>()
-                .HasKey(u => u.Id); // Устанавливаем свойство Id как первичный ключ
 
             modelBuilder.Entity<Candidate>()
+                .HasKey(u => u.Id);
+            modelBuilder.Entity<Candidate>()
                 .Property(u => u.Email)
-                .IsRequired(); // Требуем, чтобы Email был обязательным
+                .IsRequired();
 
             base.OnModelCreating(modelBuilder);
         }
@@ -37,11 +36,6 @@ namespace DataAccess
             entityBuilder.ToTable("Candidates");
             entityBuilder.HasKey(u => u.Id);
             entityBuilder.Property(s => s.Email).IsRequired();
-            entityBuilder.Property(s => s.Email).IsRequired();
-            entityBuilder.Property(s => s.Email).IsRequired();
-            entityBuilder.Property(s => s.Email).IsRequired();
-            entityBuilder.Property(s => s.Email).IsRequired();
-            //entityBuilder.Property(s => s.Balance).HasColumnType("numeric").IsRequired();
         }
     }
 }

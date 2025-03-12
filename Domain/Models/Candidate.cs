@@ -13,9 +13,10 @@ namespace Domain.Models
         public string SecondName { get; set; }
         public string Patronymic { get; set; }
         public string Email { get; set; }
-        public DateTime WorkingStartDate { get; set; }
+        public DateTime? WorkingStartDate { get; set; }
         public bool ProbationIsCompleted { get; set; }
         public bool TestIsNeeded { get; set; }
         public bool TestIsCompleted { get; set; }
+        public bool Failed { get; set; }
     }
 }

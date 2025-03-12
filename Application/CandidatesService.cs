@@ -17,12 +17,25 @@ namespace Application
         }
         public async Task<Candidate?> AddCandidate(Candidate candidateData)
         {
+            candidateData.Id = Guid.NewGuid().ToString();
+            candidateData.WorkingStartDate = null;
             return await _candidateRepository.AddCandidate(candidateData);
         }
 
-        public Task<Candidate?> FailCandidate(string candidateId)
+        public async Task<Candidate?> FailCandidate(string candidateId)
         {
-            throw new NotImplementedException();
+            var candidate = await _candidateRepository.FindCandidate(candidateId);
+            if (candidate.Failed == false) 
+            {
+                candidate.Failed = true;
+                await _candidateRepository.UpdateCandidate(candidate);
+            }
+            return candidate;
+        }
+
+        public Task<Candidate?> FindCandidate(string candidateId)
+        {
+            return _candidateRepository.FindCandidate(candidateId);
         }
     }
 }
