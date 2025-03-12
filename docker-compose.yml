@@ -11,7 +11,7 @@ services:
   db:
     image: postgres:latest
     shm_size: 128mb
-    container_name: walletdb
+    container_name: recruitmentDb
     environment:
       - POSTGRES_HOST_AUTH_METHOD=md5
       - POSTGRES_USER=postgres
